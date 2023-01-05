@@ -20,6 +20,9 @@
          </label>
       </div>
       <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+      <h6 class="text-center mt-2">
+         <a href="/register" >No have account? Register</a>
+      </h6>
       <p class="mt-5 mb-3 text-muted">&copy; 2022-2023</p>
       </form>
    </main>

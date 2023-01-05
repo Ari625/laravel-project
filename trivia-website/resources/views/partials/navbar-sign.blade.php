@@ -11,7 +11,7 @@
    </li>
    <li class="nav-item" role="presentation">
       <a href="/register" class="mt-2 mb-3 btn btn-primary" role="button">
-         <font size="4px" class="text-uppercase">register</font>
+         <font size="4px" class="text-uppercase"></font>
       </a>
    </li>
 </ul>
