@@ -7,25 +7,20 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LeaderboardController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::get('/', [HomeController::class, 'home'])->middleware('auth');
 
-Route::get('/', [HomeController::class, 'home']);
 
-Route::get('/leaderboard', [LeaderboardController::class, 'leaderboard']);
+Route::get('/leaderboard', [LeaderboardController::class, 'leaderboard'])->middleware('auth');
 
-Route::get('/profile', [ProfileController::class, 'profile']);
+Route::get('/profile', [ProfileController::class, 'profile'])->middleware('auth');
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 
-Route::get('/register', [RegisterController::class, 'register']);
+Route::post('/login', [LoginController::class, 'autenticate'])->middleware('guest');
 
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/register', [RegisterController::class, 'register'])->middleware('guest');
+
+Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
 ?>
