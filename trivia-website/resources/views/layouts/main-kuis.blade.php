@@ -9,7 +9,7 @@
   </head>
   <body>
 
-   @include('partials.navbar')
+   @include('partials.navbar-kuis')
 
    <div class="container mt-4">
 

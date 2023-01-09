@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminKuisController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KuisController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
@@ -23,4 +25,10 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'register'])->middleware('guest');
 
 Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
+
+Route::get('/kuis', [KuisController::class, 'kuis'])->middleware('auth');
+
+Route::get('/kuis/inputkuis', [KuisController::class, 'inputkuis']);
+
+Route::resource('/kuis/inputkuis', AdminKuisController::class);
 ?>
