@@ -82,4 +82,25 @@ class AdminKuisController extends Controller
     {
         //
     }
+
+    public function addkuis(){
+        return view('admin.addkuis',[
+            'title' => 'ADDKUIS'
+        ]);
+    }
+
+    public function inputkuis(Request $request)
+    {
+        $input = $request->validate([
+            'questions' => 'required|max:255',
+            'answer'    => 'required|max:255',
+            'option_a'  => 'required|max:255',
+            'option_b'  => 'required|max:255',
+            'option_c'  => 'required|max:255',
+            'option_d'  => 'required|max:255'
+        ]);
+        kuis::create($input);
+
+        return redirect('/addkuis')->with('input_succses', 'Input Kuis Succsesfull!');
+    }
 }

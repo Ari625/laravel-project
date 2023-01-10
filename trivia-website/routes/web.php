@@ -11,7 +11,6 @@ use App\Http\Controllers\LeaderboardController;
 
 Route::get('/', [HomeController::class, 'home'])->middleware('auth');
 
-
 Route::get('/leaderboard', [LeaderboardController::class, 'leaderboard'])->middleware('auth');
 
 Route::get('/profile', [ProfileController::class, 'profile'])->middleware('auth');
@@ -28,7 +27,12 @@ Route::post('/register', [RegisterController::class, 'store'])->middleware('gues
 
 Route::get('/kuis', [KuisController::class, 'kuis'])->middleware('auth');
 
-Route::get('/kuis/inputkuis', [KuisController::class, 'inputkuis']);
+Route::get('/addkuis', [AdminKuisController::class, 'addkuis']);
 
-Route::resource('/kuis/inputkuis', AdminKuisController::class);
+Route::post('/addkuis', [AdminKuisController::class, 'inputkuis']);
+
+Route::resource('/kuis/addkuis', AdminKuisController::class);
+
+Route::get('/dashboard',[DashboardController::class, 'dashboard']);
+
 ?>

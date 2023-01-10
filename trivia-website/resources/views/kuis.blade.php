@@ -11,6 +11,8 @@
    </div>
 </div>
 
+{{-- $questions = DB::table('kuis' => 'questions'); --}}
+
 <main>
    <div class="position-relative">
       <div class="card mt-5 position-absolute top-50 start-50 translate-middle-x border border-0" style="width: 60rem;">
@@ -59,6 +61,7 @@
             </font>
          </div>
          </a>
+         
          
       </div>
    </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\kuis;
 use App\Http\Requests\StorekuisRequest;
+use Illuminate\Support\Facades\Request;
 use App\Http\Requests\UpdatekuisRequest;
 
 class KuisController extends Controller
