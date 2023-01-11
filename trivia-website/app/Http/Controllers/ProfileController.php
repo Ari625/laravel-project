@@ -11,4 +11,10 @@ class ProfileController extends Controller
             'title' => 'PROFILE'
         ]);
     }
+
+    public function editprofile(){
+        return view('account', [
+            'title' => 'ACCOUNT'
+        ]);
+    }
 }

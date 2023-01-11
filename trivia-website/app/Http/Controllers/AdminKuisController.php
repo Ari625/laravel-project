@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\kuis;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class AdminKuisController extends Controller
 {
@@ -14,7 +15,8 @@ class AdminKuisController extends Controller
      */
     public function index()
     {
-        //
+        $data_kuis = kuis::all();
+        return view('kuis', compact('data_kuis'));
     }
 
     /**

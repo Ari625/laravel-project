@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\kuis;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StorekuisRequest;
 use Illuminate\Support\Facades\Request;
 use App\Http\Requests\UpdatekuisRequest;
@@ -17,6 +18,8 @@ class KuisController extends Controller
     public function index()
     {
         //
+        $data = kuis::all();
+        return ;
     }
 
     /**
@@ -86,8 +89,9 @@ class KuisController extends Controller
     }
 
     public function kuis(){
+        $data = kuis::all();
         return view('kuis', [
             'title' => 'KUIS'
-        ]);
+        ])->with('data',$data);
     }
 }

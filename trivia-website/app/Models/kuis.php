@@ -25,4 +25,6 @@ class kuis extends Model
         'option_c',
         'option_d',
     ];
+
+    protected $table = 'kuis';
 }

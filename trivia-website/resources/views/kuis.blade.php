@@ -17,10 +17,11 @@
    <div class="position-relative">
       <div class="card mt-5 position-absolute top-50 start-50 translate-middle-x border border-0" style="width: 60rem;">
 
+@foreach ($data as $kuis)
          {{-- Question --}}
          <div class="card-header mb-3 rounded-2 border border-light-subtle bg-white" style="height: 100px" >
             <font class="mt-3 mb-2 fw-bolder">
-               Pertanyaan
+               {{ $kuis['questions'] }}
             </font>
          </div>
 
@@ -28,41 +29,40 @@
 
          {{-- option A --}}
          <a href="#" role="button" class="btn">
-         <div class="card-header mb-3 rounded-2 border border-light-subtle" >
+         <div class="card-header mb-3 rounded-2 border border-light-subtle text-left" >
             <font class="mt-3 mb-2 " style="text-align: left" align="left">
-               pilihan ganda
+               {{ $kuis['option_a'] }}
             </font>
          </div>
          </a>
 
           {{-- option B --}}
          <a href="#" role="button" class="btn ">
-         <div class="card-header mb-3 rounded-2 border border-light-subtle" >
+         <div class="card-header mb-3 rounded-2 border border-light-subtle text-left" >
             <font class="mt-3 mb-2" style="text-align: left" align="left">
-               pilihan ganda
+              {{ $kuis['option_b'] }}
             </font>
          </div>
          </a>
 
           {{-- option C --}}
          <a href="#" role="button" class="btn">
-         <div class="card-header mb-3 rounded-2 border border-light-subtle" >
+         <div class="card-header mb-3 rounded-2 border border-light-subtle text-left" >
             <font class="mt-3 mb-2" style="text-align: left" align="left">
-               pilihan ganda
+               {{ $kuis['option_c'] }}
             </font>
          </div>
          </a>
 
           {{-- option D --}}
          <a href="#" role="button" class="btn">
-         <div class="card-header mb-3 rounded-2 border border-light-subtle" >
+         <div class="card-header mb-3 rounded-2 border border-light-subtle text-left" >
             <font class="mt-3 mb-2" style="text-align: left" align="left">
-               pilihan ganda
+               {{ $kuis['option_d'] }}
             </font>
          </div>
          </a>
-         
-         
+@endforeach         
       </div>
    </div>
 </main>
