@@ -19,7 +19,7 @@ Route::get('/profile', [ProfileController::class, 'profile'])->middleware('auth'
 
 Route::get('/settings', [SettingsController::class, 'settings'])->middleware('auth');
 
-Route::get('/account', [ProfileController::class, 'editprofile'])->middleware('auth');
+Route::get('/account', [ProfileController::class, 'showprofile'])->middleware('auth');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 

@@ -15,8 +15,7 @@ class AdminKuisController extends Controller
      */
     public function index()
     {
-        $data_kuis = kuis::all();
-        return view('kuis', compact('data_kuis'));
+        //
     }
 
     /**

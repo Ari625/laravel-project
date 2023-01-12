@@ -25,6 +25,8 @@
             </font>
          </div>
 
+         {{-- {!! Form::radio('pilih', 'a', $checked, [$options]) !!} --}}
+
          {{-- options --}}
 
          {{-- option A --}}
@@ -62,6 +64,8 @@
             </font>
          </div>
          </a>
+         <button class="btn btn-primary">Next</button>
+      {{-- </form> --}}
 @endforeach         
       </div>
    </div>
