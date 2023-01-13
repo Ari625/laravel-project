@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\kuis;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\StorekuisRequest;
-use Illuminate\Support\Facades\Request;
-use App\Http\Requests\UpdatekuisRequest;
+use App\Models\Poin;
+use App\Http\Requests\StorePoinRequest;
+use App\Http\Requests\UpdatePoinRequest;
 
-class KuisController extends Controller
+class PoinController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -33,10 +32,10 @@ class KuisController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorekuisRequest  $request
+     * @param  \App\Http\Requests\StorePoinRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorekuisRequest $request)
+    public function store(StorePoinRequest $request)
     {
         //
     }
@@ -44,21 +43,22 @@ class KuisController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\kuis  $kuis
+     * @param  \App\Models\Poin  $poin
      * @return \Illuminate\Http\Response
      */
-    public function show(kuis $kuis)
+    public function show(Poin $poin)
     {
-        //
+        $data_poin = poin::all();
+        return $data_poin;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\kuis  $kuis
+     * @param  \App\Models\Poin  $poin
      * @return \Illuminate\Http\Response
      */
-    public function edit(kuis $kuis)
+    public function edit(Poin $poin)
     {
         //
     }
@@ -66,11 +66,11 @@ class KuisController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatekuisRequest  $request
-     * @param  \App\Models\kuis  $kuis
+     * @param  \App\Http\Requests\UpdatePoinRequest  $request
+     * @param  \App\Models\Poin  $poin
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatekuisRequest $request, kuis $kuis)
+    public function update(UpdatePoinRequest $request, Poin $poin)
     {
         //
     }
@@ -78,19 +78,11 @@ class KuisController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\kuis  $kuis
+     * @param  \App\Models\Poin  $poin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(kuis $kuis)
+    public function destroy(Poin $poin)
     {
         //
-    }
-
-    public function kuis(){
-        $no_kuis = 0 ;
-        $data_kuis = kuis::all();
-        return view('kuis', [
-            'title' => 'KUIS'
-        ])->with('data_kuis',$data_kuis)->with('no_kuis',$no_kuis);
     }
 }

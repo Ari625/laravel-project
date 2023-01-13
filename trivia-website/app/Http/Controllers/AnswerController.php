@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\kuis;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\StorekuisRequest;
-use Illuminate\Support\Facades\Request;
-use App\Http\Requests\UpdatekuisRequest;
+use App\Models\Answer;
+use App\Http\Requests\StoreAnswerRequest;
+use App\Http\Requests\UpdateAnswerRequest;
 
-class KuisController extends Controller
+class AnswerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +15,7 @@ class KuisController extends Controller
      */
     public function index()
     {
-        //
+        $data_answer = answer::all();
     }
 
     /**
@@ -33,10 +31,10 @@ class KuisController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorekuisRequest  $request
+     * @param  \App\Http\Requests\StoreAnswerRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorekuisRequest $request)
+    public function store(StoreAnswerRequest $request)
     {
         //
     }
@@ -44,10 +42,10 @@ class KuisController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\kuis  $kuis
+     * @param  \App\Models\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function show(kuis $kuis)
+    public function show(Answer $answer)
     {
         //
     }
@@ -55,22 +53,23 @@ class KuisController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\kuis  $kuis
+     * @param  \App\Models\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function edit(kuis $kuis)
+    public function edit(Answer $answer)
     {
         //
+
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatekuisRequest  $request
-     * @param  \App\Models\kuis  $kuis
+     * @param  \App\Http\Requests\UpdateAnswerRequest  $request
+     * @param  \App\Models\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatekuisRequest $request, kuis $kuis)
+    public function update(UpdateAnswerRequest $request, Answer $answer)
     {
         //
     }
@@ -78,19 +77,11 @@ class KuisController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\kuis  $kuis
+     * @param  \App\Models\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(kuis $kuis)
+    public function destroy(Answer $answer)
     {
         //
-    }
-
-    public function kuis(){
-        $no_kuis = 0 ;
-        $data_kuis = kuis::all();
-        return view('kuis', [
-            'title' => 'KUIS'
-        ])->with('data_kuis',$data_kuis)->with('no_kuis',$no_kuis);
     }
 }
