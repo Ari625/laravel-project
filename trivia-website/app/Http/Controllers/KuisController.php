@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\kuis;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorekuisRequest;
-use Illuminate\Support\Facades\Request;
 use App\Http\Requests\UpdatekuisRequest;
+use Illuminate\Http\Request;
 
 class KuisController extends Controller
 {
@@ -93,4 +93,39 @@ class KuisController extends Controller
             'title' => 'KUIS'
         ])->with('data_kuis',$data_kuis)->with('no_kuis',$no_kuis);
     }
+    public function answers(Request $request)
+    {
+        global $data_kuis;
+        $validateData = $request->validate([
+            'no_kuis' => 'required',
+            'answer_user' => 'required'
+        ]);
+        $answer_user = $validateData['answer_user'];
+        $no_kuis = $validateData['no_kuis'];
+
+        $poin_user = 0;
+
+        $answer = $data_kuis([$no_kuis]['answer']);
+
+        if ($answer_user === $answer){
+            $poin_user += 10;
+        } else {
+            $poin_user += 0;
+        }
+
+        return $poin_user;
+    }
+
+    public function finish()
+    {
+        global $poin_user;
+        $poin_user = 10*10;
+        return view('finish-kuis',[
+            'title' => 'FINISH'
+        ])->with('poin_user',$poin_user);
+    }
 }
+// redirect()->route('RouteName',[
+//     'name' => 'kuis',
+//     'number' => $no_kuis
+// ])

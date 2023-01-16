@@ -15,39 +15,50 @@
    <div class="position-relative">
       <div class="card mt-5 position-absolute top-50 start-50 translate-middle-x border border-0" style="width: 60rem;">
 
-         <div class="card-header mb-3 rounded-2 border border-light-subtle text-left" style="height: 100px">
-            <font class="mt-3 mb-2 fw-bolder">
-               {{ $data_kuis[$no_kuis]['questions'] }}
-            </font>
-         </div>
+         <form action="/kuis" method="post">
+            @csrf
+            <input type="text" value="{{ $no_kuis }}" >
 
-         <div class="card-header mb-3 rounded-2 border border-light-subtle text-left">
-            <font class="mt-3 mb-2">
-               {{ $data_kuis[$no_kuis]['option_a'] }}
-            </font>
-         </div>
+            <div class="card-header mb-3 rounded-2 border border-light-subtle text-left" style="height: 100px">
+               <font class="mt-3 mb-2 fw-bolder">
+                  {{ $data_kuis[$no_kuis]['questions'] }}
+               </font>
+            </div>
 
-         <div class="card-header mb-3 rounded-2 border border-light-subtle text-left">
-            <font class="mt-3 mb-2">
-               {{ $data_kuis[$no_kuis]['option_b'] }}
-            </font>
-         </div>
+            <div class="card-header mb-3 rounded-2 border border-light-subtle text-left">
+            <input type="radio" value="{{ $data_kuis[$no_kuis]['option_a'] }}" name="answer_user" id="a" required>
+            <label for="a">{{ $data_kuis[$no_kuis]['option_a'] }}</label>
+            </div>
 
-         <div class="card-header mb-3 rounded-2 border border-light-subtle text-left">
-            <font class="mt-3 mb-2">
-               {{ $data_kuis[$no_kuis]['option_c'] }}
-            </font>
-         </div>
+            <div class="card-header mb-3 rounded-2 border border-light-subtle text-left">
+            <input type="radio" value="{{ $data_kuis[$no_kuis]['option_b'] }}" name="answer_user" id="b" required>
+            <label for="b">{{ $data_kuis[$no_kuis]['option_b'] }}</label>
+            </div>
+            
+            <div class="card-header mb-3 rounded-2 border border-light-subtle text-left">
+            <input type="radio" value="{{ $data_kuis[$no_kuis]['option_c'] }}" name="answer_user" id="c"  required>
+            <label for="c">{{ $data_kuis[$no_kuis]['option_c'] }}</label>
+            </div>
 
-         <div class="card-header mb-3 rounded-2 border border-light-subtle text-left">
-            <font class="mt-3 mb-2">
-               {{ $data_kuis[$no_kuis]['option_d'] }}
-            </font>
-         </div>
+            <div class="card-header mb-3 rounded-2 border border-light-subtle text-left">
+            <input type="radio" value="{{ $data_kuis[$no_kuis]['option_d'] }}" name="answer_user" id="d" required>
+            <label for="d">{{ $data_kuis[$no_kuis]['option_d'] }}</label>
+            </div>
 
-         <div class="btn btn-primary">
-            <a href="/kuis/{{ $no_kuis += 1 }}" class="btn ">Next</a>
-         </div>
+            <div class="btn btn-primary mb-2 mt-3">
+                  <button class="btn btn-primary text-white" type="submit" style="width: 58rem;">Answer</button>
+            </div>
+
+         </form>
+      <div class="btn btn-white mb-2 mt-3">
+            <a href="/kuis/@if($no_kuis > 9)finish @else{{ $no_kuis += 1 }}
+            @endif
+            " 
+            class="btn text-black">
+               Next
+            </a>
+      </div>
+
       </div>
    </div>
 </main>
