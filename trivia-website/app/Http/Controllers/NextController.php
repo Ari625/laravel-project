@@ -47,10 +47,11 @@ class NextController extends Controller
         global $poin_user;
         $data_kuis = kuis::all();
         $no_kuis += 1;
-        return view('kuis1')->with('no_kuis',$no_kuis)
-        ->with('data_kuis', $data_kuis)
-        ->with('poin_user',$poin_user)
-        ->with('title','KUIS');
+        return view('kuis', [
+            'title' => 'KUIS',
+            'poin_user' => $poin_user,
+            'no_kuis' => $no_kuis
+        ])->with('data_kuis',$data_kuis);
     }
    
     public function next2()

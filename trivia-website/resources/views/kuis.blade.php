@@ -19,7 +19,7 @@
             @csrf
             <input type="hidden" value="{{ $no_kuis }}" name="no_kuis">
             <input type="hidden" value="{{ $data_kuis[$no_kuis]['answer'] }}" name="answer">
-            <input type="hidden" value="@if($no_kuis < 1) 0 @else{{ $poin_user }} @endif " name="poin_user">
+            <input type="hidden" value="@if($no_kuis < 1) {{ auth()->user()->poin }} @else{{ $poin_user }} @endif " name="poin_user">
 
             <div class="card-header mb-3 rounded-2 border border-light-subtle text-left" style="height: 100px">
                <font class="mt-3 mb-2 fw-bolder">
@@ -32,11 +32,11 @@
             </div>
 
             <div class="card-header mb-3 rounded-2 border border-light-subtle text-left">
-            <input type="submit" value="{{ $data_kuis[$no_kuis]['option_b'] }}" name="answer_user" id="b" class="btn" >
+            <input type="submit" value="{{ $data_kuis[$no_kuis]['option_b'] }}" name="answer_user" id="b" class="btn">
             </div>
             
             <div class="card-header mb-3 rounded-2 border border-light-subtle text-left">
-            <input type="submit" value="{{ $data_kuis[$no_kuis]['option_c'] }}" name="answer_user" id="c"  class="btn">
+            <input type="submit" value="{{ $data_kuis[$no_kuis]['option_c'] }}" name="answer_user" id="c" class="btn">
             </div>
 
             <div class="card-header mb-3 rounded-2 border border-light-subtle text-left">

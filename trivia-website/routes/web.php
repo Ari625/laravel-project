@@ -58,9 +58,7 @@ Route::get('/kuis/correct',[NextController::class, 'correct'])->middleware('auth
 
 Route::get('/kuis/wrong',[NextController::class, 'wrong'])->middleware('auth');
 
-Route::get('/kuis/1',[KuisController1::class, 'kuis1'])->middleware('auth')->name('kuis1');
-
-Route::post('/kuis/1',[KuisController1::class, 'answers1'])->middleware('auth')->name('kuis1');
+Route::get('/kuis/1',[NextController::class, 'next1'])->middleware('auth')->name('kuis1');
 
 Route::get('/kuis/2',[NextController::class, 'next2'])->middleware('auth')->name('kuis2');
 
