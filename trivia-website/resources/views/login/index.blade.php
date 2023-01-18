@@ -28,7 +28,7 @@
          <input type="email" class="form-control form-control-sm @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" name="email" autofocus required >
          <label for="email">Email address</label>
          @error('email')
-         <div class="invalid-feedback">
+         <div class="invalid-feedback">s
             {{ $message }}
          </div>
          @enderror

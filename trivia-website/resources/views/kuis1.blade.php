@@ -15,7 +15,7 @@
    <div class="position-relative">
       <div class="card mt-5 position-absolute top-50 start-50 translate-middle-x border border-0" style="width: 60rem;">
 
-         <form action="/kuis" method="POST">
+         <form action="/kuis/1" method="post">
             @csrf
             <input type="hidden" value="{{ $no_kuis }}" name="no_kuis">
             <input type="hidden" value="{{ $data_kuis[$no_kuis]['answer'] }}" name="answer">
