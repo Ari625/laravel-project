@@ -26,7 +26,6 @@ class NextController extends Controller
             'title' => 'KUIS',
             'no_kuis' => $no_kuis,
             'data_kuis' => $data_kuis,
-            'poin_user' => $poin_user
        ])->with('data_kuis', $data_kuis);
     }
     public function wrong(){
@@ -37,7 +36,6 @@ class NextController extends Controller
             'title' => 'KUIS',
             'no_kuis' => $no_kuis,
             'data_kuis' => $data_kuis,
-            'poin_user' => $poin_user
         ])->with('data_kuis', $data_kuis);
     }
 
@@ -49,7 +47,6 @@ class NextController extends Controller
         $no_kuis += 1;
         return view('kuis', [
             'title' => 'KUIS',
-            'poin_user' => $poin_user,
             'no_kuis' => $no_kuis
         ])->with('data_kuis',$data_kuis);
     }
@@ -62,7 +59,6 @@ class NextController extends Controller
         $no_kuis += 2;
         return view('kuis', [
             'title' => 'KUIS',
-            'poin_user' => $poin_user,
             'no_kuis' => $no_kuis
         ])->with('data_kuis',$data_kuis);
     }
@@ -74,7 +70,6 @@ class NextController extends Controller
         $no_kuis += 3;
         return view('kuis', [
             'title' => 'KUIS',
-            'poin_user' => $poin_user,
             'no_kuis' => $no_kuis
         ])->with('data_kuis',$data_kuis);
     }
@@ -86,7 +81,6 @@ class NextController extends Controller
         $no_kuis += 4;
         return view('kuis', [
             'title' => 'KUIS',
-            'poin_user' => $poin_user,
             'no_kuis' => $no_kuis
         ])->with('data_kuis',$data_kuis);
     }
@@ -98,7 +92,6 @@ class NextController extends Controller
         $no_kuis += 5;
         return view('kuis', [
             'title' => 'KUIS',
-            'poin_user' => $poin_user,
             'no_kuis' => $no_kuis
         ])->with('data_kuis',$data_kuis);
     }
@@ -110,7 +103,6 @@ class NextController extends Controller
         $no_kuis += 6;
         return view('kuis', [
             'title' => 'KUIS',
-            'poin_user' => $poin_user,
             'no_kuis' => $no_kuis
         ])->with('data_kuis',$data_kuis);
     }
@@ -122,7 +114,6 @@ class NextController extends Controller
         $no_kuis += 7;
         return view('kuis', [
             'title' => 'KUIS',
-            'poin_user' => $poin_user,
             'no_kuis' => $no_kuis
         ])->with('data_kuis',$data_kuis);
     }
@@ -134,7 +125,6 @@ class NextController extends Controller
         $no_kuis += 8;
         return view('kuis', [
             'title' => 'KUIS',
-            'poin_user' => $poin_user,
             'no_kuis' => $no_kuis
         ])->with('data_kuis',$data_kuis);
     }
@@ -146,7 +136,6 @@ class NextController extends Controller
         $no_kuis += 9;
         return view('kuis', [
             'title' => 'KUIS',
-            'poin_user' => $poin_user,
             'no_kuis' => $no_kuis
         ])->with('data_kuis',$data_kuis);
     }

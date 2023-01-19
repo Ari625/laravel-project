@@ -9,6 +9,12 @@
             {{ session('correct') }}
          </font>
       </div>
+      <div class="btn card btn-white mb-2 mt-3">
+         <a href="/kuis/{{ $no_kuis += 1 }}" 
+         class="btn text-black">
+         @if($no_kuis >= 9)FINISH @else NEXT @endif
+         </a>
+   </div>
       @endif
 
       @if(session('wrong'))
@@ -17,15 +23,15 @@
             {{ session('wrong') }}
          </font>
       </div>
+      <div class="btn card btn-white mb-2 mt-3">
+         <a href="/kuis/{{ $no_kuis += 1 }}" 
+         class="btn text-black">
+         @if($no_kuis >= 9)FINISH @else NEXT @endif
+         </a>
+   </div>
       @endif
 
-      <div class="btn card btn-white mb-2 mt-3">
-            <a href="/kuis/@if($no_kuis >= 9)finish @else{{ $no_kuis += 1 }}
-               @endif" 
-            class="btn text-black">
-            @if($no_kuis >= 9)FINISH @else NEXT
-            @endif
-            </a>
-      </div>
+      
     </div>
 @endsection
+{{-- @if($no_kuis >= 9)finish @else{{ $no_kuis += 1 }} @endif --}}

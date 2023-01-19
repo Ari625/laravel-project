@@ -8,8 +8,6 @@
    <h2 class="text-primary fw-bolder border card text-center mb-3 mt-2">{{ $poin_user }} Points</h2>
       <a href="/" class="btn btn-white mb-3 mt-2">Back</a>
 
-      <h3>{{ $answer_user }}</h3>
-
    </div>
 </div>
 
