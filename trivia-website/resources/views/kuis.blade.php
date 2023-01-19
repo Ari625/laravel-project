@@ -5,7 +5,7 @@
 
       {{-- Progress --}}
       <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 60rem; height:5px;"> 
-         <div class="progress-bar w-20" style="width: {{ $no_kuis  }}0%"></div>
+         <div class="progress-bar w-20" style="width: {{ $no_kuis }}0%"></div>
       </div>
 
    </div>
@@ -45,11 +45,13 @@
          </form>
 
          @if(session('correct'))
-         <div class="card">
-         <div class="card text-center alert alert-succses alert-dismissible fade show bg-green" role="alert" style = "width: 60rem; height: 6rem;">
-            <font class="mb-3 mt-2 text-green">
-               {{ session('correct') }}
-            </font>
+         
+         <div class="card text-center alert alert-success alert-dismissible fade show text-success" role="alert" style = "width: 60rem; height: 6rem;">
+            <h3>
+               <font class="mb-3 mt-2 text-green">
+                  {{ session('correct') }}
+               </font>
+            </h3>
          </div>
          <div class="btn card btn-white mb-2 mt-3">
             <a href="/kuis/@if($no_kuis >= 9)finish @else{{ $no_kuis += 1 }} @endif" 
@@ -57,15 +59,16 @@
             @if($no_kuis > 9)FINISH @else NEXT @endif
             </a>
       </div>
-         </div>
          @endif
    
          @if(session('wrong'))
-         <div class="card">
+         
          <div class="text-center alert alert-danger alert-dismissible fade show" role="alert" style = "width: 60rem; height: 6rem;">
-            <font class="mb-3 mt-2">
-               {{ session('wrong') }}
-            </font>
+            <h3>
+               <font class="mb-3 mt-2">
+                  {{ session('wrong') }}
+               </font>
+            </h3>
          </div>
          <div class="btn card btn-white mb-2 mt-3">
             <a href="/kuis/@if($no_kuis >= 9)finish @else{{ $no_kuis += 1 }} @endif" 
@@ -73,7 +76,6 @@
             @if($no_kuis >= 9)FINISH @else NEXT @endif
             </a>
       </div>
-   </div>
          @endif
 
       </div>

@@ -18,7 +18,7 @@
       <div class="card-header rounded-2 mb-2 mt-3 border border-light-subtle">
          <font class="mt-3 mb-2" size="4"> 
            Your poin : 
-           <font class="text-primary"> 
+           <font class="text-primary fw-bolder"> 
             {{ auth()->user()->poin }}
            </font>
          </font>
