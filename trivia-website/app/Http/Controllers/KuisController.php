@@ -24,27 +24,23 @@ class KuisController extends Controller
    {
        $data_kuis = kuis::all();
        $validateData = $request->validate([
-           'no_kuis' => 'required',
-           'answer' => 'required',
-           'answer_user' => 'required'
+            'no_kuis' => 'required',
+            'answer' => 'required',
+            'answer_user' => 'required',
+            'poin_user' => 'max:255|required'
        ]);
 
-       $answer_user = $validateData['answer_user'];
-       $no_kuis = $validateData['no_kuis'];
-       $answer = $validateData['answer'];
-
-    //    return view('finish-kuis',[
-    //     'title' => 'FINISH',
-    //     'answer_user' => $answer_user,
-    //     'no_kuis' => $no_kuis,
-    //     'answer' => $answer,
-    //     'poin_user' => $poin_user
-    //    ]);
+        $answer_user = $validateData['answer_user'];
+        $no_kuis = $validateData['no_kuis'];
+        $answer = $validateData['answer'];
+        $poin_user = $validateData['poin_user'];
 
        if ($answer_user == $answer){
-            return back()->with('correct','Correct');
+            $poin_user += 10;
+            return back()->with('correct','Correct')->with('poin_user',$poin_user);
         } else {
-            return back()->with('wrong','Wrong');
+            $poin_user += 0;
+            return back()->with('wrong','Wrong')->with('poin_user',$poin_user);
         }
    }
 
@@ -81,3 +77,11 @@ class KuisController extends Controller
     // redirect()->intended('correct')->with('no_kuis',$no_kuis);
 
     // redirect()->intended('wrong')->with('no_kuis',$no_kuis);
+
+    //    return view('finish-kuis',[
+    //     'title' => 'FINISH',
+    //     'answer_user' => $answer_user,
+    //     'no_kuis' => $no_kuis,
+    //     'answer' => $answer,
+    //     'poin_user' => $poin_user
+    //    ]);
