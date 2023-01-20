@@ -157,8 +157,7 @@ class NextController extends Controller
         return view('kuis', [
                     'title' => 'KUIS',
                     'poin_user' => $poin_user,
-                    'no_kuis' => $no_kuis,
-                    'poin_user' => $poin_user
+                    'no_kuis' => $no_kuis
                 ])->with('data_kuis', $data_kuis);
     }
 }
