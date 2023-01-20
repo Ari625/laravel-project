@@ -37,10 +37,10 @@ class KuisController extends Controller
 
        if ($answer_user == $answer){
             $poin_user += 10;
-            return back()->with('correct','Correct')->with('poin_user',$poin_user);
+            return redirect()->back()->with('correct','Correct')->with('poin_user',$poin_user);
         } else {
             $poin_user += 0;
-            return back()->with('wrong','Wrong')->with('poin_user',$poin_user);
+            return redirect()->back()->with('wrong','Wrong')->with('poin_user',$poin_user);
         }
    }
 
