@@ -11,7 +11,7 @@ class QuestionsController extends Controller
     public function question()
     {
         $no_kuis = 0;
-        $data_questions = questions::all();
+        $data_questions = questions::where('quiz_id', 1)->take(10)->get();
         return view('question', [
             'title' => 'QUIZ',
             'data_questions' => $data_questions,
