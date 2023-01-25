@@ -12,33 +12,45 @@
    <div class="position-relative">
       <div class="card mt-5 position-absolute top-50 start-50 translate-middle-x border border-0" style="width: 60rem;">
 
-         <form action="/kuis" method="POST">
+         
+      <form action="/kuis" method="POST">
+
+@foreach ($data_questions as $questions)
+      
             @csrf
             <input type="hidden" value="{{ $no_kuis }}" name="no_kuis">
             <input type="hidden" value="{{ $data_questions[$no_kuis]['answer'] }}" name="answer">
             <input type="hidden" value="@if($no_kuis < 1) {{ auth()->user()->poin }} @else (session('poin_user')) @endif" name="poin_user">
 
             <div class="card-header mb-3 rounded-2 border border-light-subtle text-left" style="height: 100px">
-               <font class="mt-3 mb-2 fw-bolder">
+               <font class="mt-3 mb-2 fw-bolder text-uppercase">
                   {{ $data_questions[$no_kuis]['question'] }}
                </font>
             </div>
 
             <div class="card-header mb-3 rounded-2 border border-light-subtle text-left">
-            <input type="submit" value="{{ $data_questions[$no_kuis]['option_a'] }}" name="answer_user" id="a" class="btn" required>
+            <input type="radio" value="{{ $data_questions[$no_kuis]['option_a'] }}" name="answer_user_{{ $no_kuis }}" id="a" class="btn" required>
+            <label for="a" class="mt-2 mb-2 text-capitalize">{{ $data_questions[$no_kuis]['option_a'] }}</label>
             </div>
 
             <div class="card-header mb-3 rounded-2 border border-light-subtle text-left">
-            <input type="submit" value="{{ $data_questions[$no_kuis]['option_b'] }}" name="answer_user" id="b" class="btn" required>
+            <input type="radio" value="{{ $data_questions[$no_kuis]['option_b'] }}" name="answer_user_{{ $no_kuis }}" id="b" class="btn" required>
+            <label for="b" class="mt-2 mb-2 text-capitalize">{{ $data_questions[$no_kuis]['option_b'] }}</label>
             </div>
             
             <div class="card-header mb-3 rounded-2 border border-light-subtle text-left">
-            <input type="submit" value="{{ $data_questions[$no_kuis]['option_c'] }}" name="answer_user" id="c" class="btn" required>
+            <input type="radio" value="{{ $data_questions[$no_kuis]['option_c'] }}" name="answer_user_{{ $no_kuis }}" id="c" class="btn" required>
+            <label for="c" class="mt-2 mb-2 text-capitalize">{{ $data_questions[$no_kuis]['option_c'] }}</label>
             </div>
 
             <div class="card-header mb-3 rounded-2 border border-light-subtle text-left">
-            <input type="submit" value="{{ $data_questions[$no_kuis]['option_d'] }}" name="answer_user" id="d" class="btn" required>
+            <input type="radio" value="{{ $data_questions[$no_kuis]['option_d'] }}" name="answer_user_{{ $no_kuis }}" id="d" class="btn" required>
+            <label for="d" class="mt-2 mb-2 text-capitalize" >{{ $data_questions[$no_kuis]['option_d'] }}</label>
             </div>
+<?php $no_kuis++; ?>
+@endforeach
+         
+            <input type="submit" value="answer" class="btn btn-primary text-uppercase fs-4 mb-3 mt-2" style="width: 60rem">
 
          </form>
 
