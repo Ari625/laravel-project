@@ -34,5 +34,5 @@
       </div>
    </div>
    @endforeach
-   {{-- {{ asset('img/logo-quiz.png') }} --}}
+   
 @endsection
