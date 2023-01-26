@@ -30,4 +30,8 @@ Route::get('/list-quiz',[QuizsController::class, 'quizs'])->middleware('auth');
 
 Route::get('/quiz',[QuestionsController::class, 'question'])->middleware('auth');
 
+Route::post('/quiz',[QuestionsController::class, 'answer'])->middleware('auth');
+
+Route::get('/finish', [QuestionsController::class, 'finish'])->middleware('auth');
+
 Route::get('/image/logo-quiz.png', 'HomeController@displayImage');

@@ -13,14 +13,15 @@
       <div class="card mt-5 position-absolute top-50 start-50 translate-middle-x border border-0" style="width: 60rem;">
 
          
-      <form action="/kuis" method="POST">
+      <form action="/quiz" method="POST">
 
 @foreach ($data_questions as $questions)
       
             @csrf
+            <input type="hidden" value="{{ auth()->user()->id }}" name="user_id">
             <input type="hidden" value="{{ $no_kuis }}" name="no_kuis">
-            <input type="hidden" value="{{ $data_questions[$no_kuis]['answer'] }}" name="answer">
-            <input type="hidden" value="@if($no_kuis < 1) {{ auth()->user()->poin }} @else (session('poin_user')) @endif" name="poin_user">
+            <input type="hidden" value="1" name="quiz_id">
+            <input type="hidden" value="{{ $data_questions[$no_kuis]['answer'] }}" name="answer_{{ $no_kuis }}">
 
             <div class="card-header mb-3 rounded-2 border border-light-subtle text-left" style="height: 100px">
                <font class="mt-3 mb-2 fw-bolder text-uppercase">
