@@ -6,7 +6,7 @@
     <h5 class="card-title text-uppercase">Kuis harian</h5>
     <h6 class="card-subtitle text-white text-muted mt-3 nav-item" style="color:white;"> </h6>
     <h6 class="card-subtitle text-white text-muted nav-item" style="color:white;"> </h6>
-      <a href="/list-quiz" class="card-link btn btn-primary mt-4 fw-bolder" role="button" align="right">Mulai</a>
+      <a href="/list-quiz" class="card-link btn btn-primary mt-4 fw-bolder" role="button" align="right">Start</a>
   </div>
 </div>
 

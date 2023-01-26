@@ -27,7 +27,7 @@
                <h6 class="card-subtitle text-white text-muted nav-item mb-2 mt-2" style="color:white;">
 
                </h6>
-               <a href="/quiz" class="card-link btn btn-primary mt-4 fw-bolder" role="button" align="right">Jawab Quiz</a>
+               <a href="/quiz" class="card-link btn btn-primary mt-4 fw-bolder" role="button" align="right">Answer Quiz</a>
             </div>
          </div>
       </div>
