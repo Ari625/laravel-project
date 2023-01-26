@@ -24,7 +24,7 @@ class QuestionsController extends Controller
     public function finish()
     {
         $no_id = 11;
-        $data_point = points::latest('point')->take(1)->get('');
+        $data_point = points::latest()->take(1)->get();
         return view('finish',[
             'title' => 'FINISH',
             'poin_user' => $data_point,
