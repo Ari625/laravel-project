@@ -58,7 +58,7 @@
             </li>
             <li class="nav-item" role="presentation">
                <font style="font-size : 15px ;">
-                  {{ $user['username'] }}
+                  {{ $user['name'] }}
                </font>
             </li>
             <li class="nav-item" role="presentation">

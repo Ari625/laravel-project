@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\QuizsController;
 use App\Http\Controllers\QuestionsController;
+use App\Http\Controllers\LeaderboardController;
 
 Route::get('/', function () {
     return view('home-page',[
@@ -33,5 +34,7 @@ Route::get('/quiz',[QuestionsController::class, 'question'])->middleware('auth')
 Route::post('/quiz',[QuestionsController::class, 'answer'])->middleware('auth');
 
 Route::get('/finish', [QuestionsController::class, 'finish'])->middleware('auth');
+
+Route::get('/leaderboard', [LeaderboardController::class, 'leaderboard'])->middleware('auth');
 
 Route::get('/image/logo-quiz.png', 'HomeController@displayImage');
