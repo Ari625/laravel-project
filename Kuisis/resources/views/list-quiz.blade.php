@@ -17,7 +17,6 @@
    <div class="row gx-5">
       <div class="col">
          <div class="card rounded-3 shadow-sm p-3 mb-3 bg-body-tertiary rounded border border-2" style="width: 26rem;">
-            <img src="logo-quiz.png" width="22rem" class="card-img-top" alt="">
             <div class="card-body">
                <h5 class="card-title text-uppercase">
                   {{ $quizs['title'] }}

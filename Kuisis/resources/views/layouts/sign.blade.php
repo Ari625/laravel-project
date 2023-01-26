@@ -12,7 +12,7 @@
   </head>
   <body>
 
-   @include('partials.navbar-sign');
+   @include('partials.navbar-sign')
 
    <div class="container mt-4">
 

@@ -10,7 +10,10 @@ Route::get('/', function () {
     return view('home-page',[
         'title' => 'HOME'
     ]);
-})->middleware('auth');
+})->middleware('auth')->name('HOME');
+Route::get('/home', function () {
+    return redirect('/');
+});
 Route::get('/profile', function () {
     return view('profile',[
         'title' => 'PROFILE'
@@ -21,7 +24,7 @@ Route::get('/login',[UserController::class, 'login'])->middleware('guest')->name
 
 Route::post('/login',[UserController::class, 'autenticate'])->middleware('guest');
 
-Route::post('/logout',[UserController::class, 'logout'])->middleware('auth');
+Route::post('/logout', [UserController::class, 'logout']);
 
 Route::get('/registration',[UserController::class, 'registration'])->middleware('guest');
 
