@@ -48,8 +48,8 @@
             <input type="radio" value="{{ $data_questions[$no_kuis]['option_d'] }}" name="answer_user_{{ $no_kuis }}" id="d" class="btn" required>
             <label for="d" class="mt-2 mb-2 text-capitalize" >{{ $data_questions[$no_kuis]['option_d'] }}</label>
             </div>
-<?php $no_kuis++; ?>
-@endforeach
+   <?php $no_kuis++; ?>
+   @endforeach
          
             <input type="submit" value="answer" class="btn btn-primary text-uppercase fs-4 mb-3 mt-2" style="width: 60rem">
 
