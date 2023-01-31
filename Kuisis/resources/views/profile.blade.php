@@ -15,6 +15,11 @@
              </svg> </i> {{ auth()->user()->name }} 
          </font>
       </div> 
+      <div class="card-header rounded-2 mb-2 mt-3 border border-light-subtle">
+         <font class="mt-3 mb-2" size="4">
+            {{ $poin_user }} Points
+         </font>
+      </div> 
 
          <div align="center" class="container px-4 text-center mt-3 mb-2">
             <div class="row gx-5">

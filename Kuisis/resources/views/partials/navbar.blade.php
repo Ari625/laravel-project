@@ -4,6 +4,15 @@
       <font class="font-bold text-uppercase fw-bolder" style="color: #00A3ff;" size="6px">KUISIS</font>
    </button>
    </li>
+   @if(auth()->user()->is_admin == 1 || auth()->user()->name == 'admin')
+   <li class="nav-item" role="presentation">
+      <a href="/dashboard" class="mt-2 mb-3 btn" role="button" style="color: white;">
+         <font size="4px" class="text-uppercase">Dashboard</font>
+      </a>
+   </li>
+   @else 
+   
+   @endif
    <li class="nav-item" role="presentation">
       <a href="/" class="mt-2 mb-3 btn" role="button" style="color: white;">
          <font size="4px" class="text-uppercase">Home</font>

@@ -48,7 +48,7 @@
       </h4>
    </div>
 
-   @foreach ($data_users as $user)
+   @foreach ($data_point as $point)
       <div class="card-header mb-2 mt-2 rounded-2" >
          <ul class="nav nav-pills gap-2 p-1 nav-fill small " role="tablist" id="pillnav2">
             <li class="nav-item" role="presentation">
@@ -61,9 +61,10 @@
             </li>
             <li class="nav-item" role="presentation">
                <font style="font-size : 15px ;">
-                  {{ $user['name'] }}
+                  {{ $data_users[$point['user_id']]['name'] }}
                </font>
             </li>
+            {{-- $point[$no]['user_id'] --}}
             <li class="nav-item" role="presentation">
 
             </li>
@@ -90,6 +91,7 @@
             </li>
             <li class="nav-item" role="presentation">
                <font style="font-size : 15px ;">
+                  {{ $point['point'] }}
                </font>
             </li>
          </ul>

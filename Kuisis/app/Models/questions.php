@@ -11,6 +11,16 @@ class questions extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $fillable = [
+        'quiz_id',
+        'question',
+        'option_a',
+        'option_b',
+        'option_c',
+        'option_d',
+        'answer'
+    ];
+
     protected $table = 'questions';
 
 }

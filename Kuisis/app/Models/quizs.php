@@ -11,5 +11,11 @@ class quizs extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $fillable= [
+        'user_id',
+        'thumbnail',
+        'title',
+        'description'
+    ];
     protected $table = 'quizs';
 }
