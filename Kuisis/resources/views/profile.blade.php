@@ -17,7 +17,7 @@
       </div> 
       <div class="card-header rounded-2 mb-2 mt-3 border border-light-subtle">
          <font class="mt-3 mb-2" size="4">
-            {{ $poin_user }} Points
+            You Have {{ $poin_user }} Points
          </font>
       </div> 
 
@@ -26,10 +26,7 @@
                <div class="col">
                   <div class="p-3 border border-light-subtle rounded-2">
                      <h6 class="text-info fw-bolder">Questions has been answered</h6>
-                     <h6>.</h6>
-                     <h6>.</h6>
-                     <h6>.</h6>
-                     <h6>.</h6>
+                     <h4 class="text-primary mt-5 mb-5">{{ $poin_user/10 }}</h4>
                   </div>
                </div>
                <div class="col">
